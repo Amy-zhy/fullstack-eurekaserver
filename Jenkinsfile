@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'echo "Starting building..."'
+        echo "Starting building..."
         bat 'cd C:/Jenkinstest'
         echo 'dir'
         bat 'cp fullstack-eurekaserver/target/eureka-server-1.0-SNAPSHOT.jar C:/Jenkinstest/eureka-server-1.0-SNAPSHOT.jar'

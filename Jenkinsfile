@@ -4,11 +4,23 @@ pipeline {
     stage('Build') {
       steps {
         echo 'build finished'
+        bat 'mvn clean'
+        echo 'maven clean successfully...'
+        bat 'mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V'
+        echo 'maven install successfully...'
+        bat 'mvn package'
+        echo 'maven package successfully...'
       }
     }
     stage('Deploy') {
       steps {
         sh 'echo "Starting building..."'
+        bat 'cd C:/Jenkinstest'
+        echo 'dir'
+        bat 'cp fullstack-eurekaserver/target/eureka-server-1.0-SNAPSHOT.jar C:/Jenkinstest/eureka-server-1.0-SNAPSHOT.jar'
+        echo 'copy jar successfully!'
+        bat 'java -jar eureka-server-1.0-SNAPSHOT.jar'
+        echo 'start jar successfully!!!'
       }
     }
   }

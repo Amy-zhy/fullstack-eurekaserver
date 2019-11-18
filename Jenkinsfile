@@ -15,10 +15,12 @@ pipeline {
     stage('Deploy') {
       steps {
         echo "Starting building..."
+        bat 'cd C:\Users\HongYuZhang\.jenkins\workspace\erueka_master'
+        bat 'dir'
+        bat 'copy C:\Users\HongYuZhang\.jenkins\workspace\erueka_master\target\eureka-server-1.0-SNAPSHOT.jar C:/Jenkinstest/'
+        echo 'copy jar successfully!'
         bat 'cd C:/Jenkinstest'
         bat 'dir'
-        bat 'copy fullstack-eurekaserver/target/eureka-server-1.0-SNAPSHOT.jar C:/Jenkinstest/eureka-server-1.0-SNAPSHOT.jar'
-        echo 'copy jar successfully!'
         bat 'java -jar eureka-server-1.0-SNAPSHOT.jar'
         echo 'start jar successfully!!!'
       }

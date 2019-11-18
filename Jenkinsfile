@@ -16,8 +16,8 @@ pipeline {
       steps {
         echo "Starting building..."
         bat 'cd C:/Jenkinstest'
-        echo 'dir'
-        bat 'cp fullstack-eurekaserver/target/eureka-server-1.0-SNAPSHOT.jar C:/Jenkinstest/eureka-server-1.0-SNAPSHOT.jar'
+        bat 'dir'
+        bat 'copy fullstack-eurekaserver/target/eureka-server-1.0-SNAPSHOT.jar C:/Jenkinstest/eureka-server-1.0-SNAPSHOT.jar'
         echo 'copy jar successfully!'
         bat 'java -jar eureka-server-1.0-SNAPSHOT.jar'
         echo 'start jar successfully!!!'

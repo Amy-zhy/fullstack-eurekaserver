@@ -1,0 +1,11 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - EurekaServer",
+      "request": "launch",
+      "mainClass": "com.fullstack.EurekaServer",
+      "projectName": "eureka-server"
+    }
+  ]
+}

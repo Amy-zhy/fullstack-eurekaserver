@@ -15,15 +15,15 @@ pipeline {
     stage('Deploy') {
       steps {
         echo "Starting building..."
-        bat 'copy C:\\PassWS.txt C:\\Jenkinstest'
-        // bat 'cd C:/Users/HongYuZhang/.jenkins/workspace/erueka_master/target'
-        // bat 'dir'
-        // bat 'xcopy "C:/Users/HongYuZhang/.jenkins/workspace/erueka_master/target/eureka-server-1.0-SNAPSHOT.jar" "C:/Jenkinstest"'
-        // echo 'copy jar successfully!'
-        // bat 'cd C:/Jenkinstest'
-        // bat 'dir'
-        // bat 'java -jar eureka-server-1.0-SNAPSHOT.jar'
-        // echo 'start jar successfully!!!'
+        // bat 'copy C:\\PassWS.txt C:\\Jenkinstest'
+        bat 'cd C:\\Users\\HongYuZhang\\.jenkins\\workspace\\erueka_master\\target'
+        bat 'dir'
+        bat 'xcopy "C:\\Users\\HongYuZhang\\.jenkins\\workspace\\erueka_master\\target\\eureka-server-1.0-SNAPSHOT.jar" "C:\\Jenkinstest"'
+        echo 'copy jar successfully!'
+        bat 'cd C:\\Jenkinstest'
+        bat 'dir'
+        bat 'java -jar eureka-server-1.0-SNAPSHOT.jar'
+        echo 'start jar successfully!!!'
       }
     }
   }

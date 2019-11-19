@@ -24,7 +24,8 @@ pipeline {
         // echo 'start jar successfully!!!'
 
         bat 'docker build -f C:\\Users\\HongYuZhang\\Desktop\\fullstack-eurekaserver\\Dockerfile -t eureka C:\\Users\\HongYuZhang\\Desktop\\fullstack-eurekaserver\\target'
-        bat 'docker run -d -p 9999:8761 eureka-server'  
+        bat 'docker images'
+        bat 'docker run -d -p 9999:8761 eureka'  
         bat 'docker ps'    
       }
     }

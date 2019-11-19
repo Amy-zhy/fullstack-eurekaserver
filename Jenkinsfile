@@ -15,7 +15,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo "Starting building..."
-        bat 'copy C:/PassWS.txt C:/Jenkinstest'
+        bat 'copy C:\\PassWS.txt C:\\Jenkinstest'
         // bat 'cd C:/Users/HongYuZhang/.jenkins/workspace/erueka_master/target'
         // bat 'dir'
         // bat 'xcopy "C:/Users/HongYuZhang/.jenkins/workspace/erueka_master/target/eureka-server-1.0-SNAPSHOT.jar" "C:/Jenkinstest"'

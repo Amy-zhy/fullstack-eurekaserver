@@ -20,9 +20,9 @@ pipeline {
         bat 'dir'
         bat 'copy "C:\\Users\\HongYuZhang\\.jenkins\\workspace\\erueka_master\\target\\eureka-server-1.0-SNAPSHOT.jar" "C:\\Jenkinstest"'
         echo 'copy jar successfully!'
-        bat 'cd C:\\Jenkinstest'
-        bat 'dir'
-        bat 'java -jar eureka-server-1.0-SNAPSHOT.jar'
+        bat 'cd C:\\Jenkinstest java -jar eureka-server-1.0-SNAPSHOT.jar'
+        // bat 'dir'
+        // bat 'java -jar eureka-server-1.0-SNAPSHOT.jar'
         echo 'start jar successfully!!!'
       }
     }

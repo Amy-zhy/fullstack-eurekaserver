@@ -23,12 +23,15 @@ pipeline {
         // bat 'java -jar C:\\Jenkinstest\\eureka-server-1.0-SNAPSHOT.jar'
         // echo 'start jar successfully!!!'
 
-        bat 'docker build -f C:\\Users\\HongYuZhang\\Desktop\\fullstack-eurekaserver\\Dockerfile -t eureka C:\\Users\\HongYuZhang\\Desktop\\fullstack-eurekaserver\\target'
+        // bat 'docker build -f C:\\Users\\HongYuZhang\\Desktop\\fullstack-eurekaserver\\Dockerfile -t eureka C:\\Users\\HongYuZhang\\Desktop\\fullstack-eurekaserver\\target'
         // bat 'docker images'
         // bat 'docker run -d -p 9999:8761 eureka'  
         // bat 'docker ps' 
         withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-          bat 'docker login -u $USERNAME -p $PASSWORD'
+          echo '$USERNAME + %USERNAME%'
+          echo '$PASSWORD + %PASSWORD%'
+          // bat 'docker login -u $USERNAME -p $PASSWORD'
+          bat 'docker login -u %USERNAME% -p %PASSWORD%'
           bat 'docker image build -f C:\\Users\\HongYuZhang\\Desktop\\fullstack-eurekaserver\\Dockerfile -t eureka C:\\Users\\HongYuZhang\\Desktop\\fullstack-eurekaserver\\target'
           bat 'docker push zhanghongyu423/eureka:latest'
         }   

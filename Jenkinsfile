@@ -32,8 +32,8 @@ pipeline {
           echo '$PASSWORD + %PASSWORD%'
           // bat 'docker login -u $USERNAME -p $PASSWORD'
           bat 'docker login -u %USERNAME% -p %PASSWORD%'
-          bat 'docker image build -f C:\\Users\\HongYuZhang\\Desktop\\fullstack-eurekaserver\\Dockerfile -t eureka C:\\Users\\HongYuZhang\\Desktop\\fullstack-eurekaserver\\target'
-          bat 'docker push zhanghongyu423/eureka:latest'
+          bat 'docker image build -f C:\\Users\\HongYuZhang\\Desktop\\fullstack-eurekaserver\\Dockerfile -t zhanghongyu423/eureka:jenkinsbuild C:\\Users\\HongYuZhang\\Desktop\\fullstack-eurekaserver\\target'
+          bat 'docker push zhanghongyu423/eureka:jenkinsbuild'
         }   
       }
     }
